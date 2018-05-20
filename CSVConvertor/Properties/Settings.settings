@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="CSVConvertor.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ManagementAccess" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">whitfield</Value>
+    </Setting>
+    <Setting Name="Level2ExcludeField" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">ID0001</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,55 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="CSVConvertor.MainWindow"
+        Title="CSV Convertor" Height="557.327" Width="800" WindowStartupLocation="CenterScreen" Icon="RSMCSV.ico">
+    <Grid Margin="10,10,0.333,3.667" Name="MainGrid">
+
+        <StackPanel HorizontalAlignment="Left" Height="110" Margin="42,113,0,0" VerticalAlignment="Top" Width="202" Name="AdditionFileSelectPanel">
+            <Label x:Name="label1" Content="Set current mapping"/>
+            <ComboBox x:Name="MappingFileList" SelectionChanged="MappingFileList_SelectionChanged"/>
+            <Button x:Name="ImportITMFieldsButton" Content="Import ITM fields" HorizontalAlignment="Left" Margin="0,5,0,0" VerticalAlignment="Top" Click="ImportITMFieldsButton_Click" Width="202"/>
+            <Button x:Name="ImportMappingsFile" Content="Import mappings file" HorizontalAlignment="Left" Margin="0,5,0,0" VerticalAlignment="Top" Width="202" Click="ImportMappingsFile_Click"/>
+        </StackPanel>
+
+        <Button x:Name="ExitForm" Content="Exit" HorizontalAlignment="Left" Margin="689,475,0,0" VerticalAlignment="Top" Width="75" Click="ExitForm_Click" RenderTransformOrigin="0.553,-0.107"/>
+        <Image HorizontalAlignment="Left" Height="32" Margin="68,41,0,0" VerticalAlignment="Top" Width="303" Source="Resources/bob.png" Stretch="Fill"/>
+        <Button x:Name="SelectOriginalFile" Content="Select file to be converted" HorizontalAlignment="Left" Margin="42,228,0,0" VerticalAlignment="Top" Width="202" Click="SelectOriginalFile_Click"/>
+        <TextBox x:Name ="OriginalFile" HorizontalAlignment="Left" Height="23" Margin="269,228,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="495"/>
+        <Button x:Name="SetDestination" Content="Set location of file after conversion" HorizontalAlignment="Left" Margin="42,283,0,0" VerticalAlignment="Top" Width="202" Click="SetDestination_Click"/>
+        <TextBox x:Name="DestinationLocation" HorizontalAlignment="Left" Height="23" Margin="269,280,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="495"/>
+        <Button x:Name="ConvertFile" Content="Convert file" HorizontalAlignment="Left" Margin="42,465,0,0" VerticalAlignment="Top" Width="202" Click="ConvertFile_Click" Height="30"/>
+
+        <StackPanel x:Name="ManagementPanel" HorizontalAlignment="Left" Height="129" Margin="476,113,0,0" VerticalAlignment="Top" Width="279">
+            <Label x:Name="label" Content="Management"/>
+            <Button x:Name="optionButton" Content="Manage ITM fields" Click="optionButton_Click"/>
+            <Button x:Name="ManageMappingsButton" Content="Manage mappings to ITM fields" Click="ManageMappingsButton_Click" Margin="0,10,0,0"/>
+
+        </StackPanel>
+        <CheckBox x:Name="FirstRowHeadersCheckBox" Content="First row contains headers" HorizontalAlignment="Left" Margin="269,256,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="OpenManagementSettings" Content="Open management settings" HorizontalAlignment="Left" Margin="284,150,0,0" VerticalAlignment="Top" Width="172" Click="OpenManagementSettings_Click" RenderTransformOrigin="0.519,-0.283"/>
+        <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Margin="349,121,0,0" VerticalAlignment="Top" Width="107" KeyDown="passwordBox_KeyDown"/>
+        <Label x:Name="label2" Content="Password" HorizontalAlignment="Left" Margin="284,115,0,0" VerticalAlignment="Top" Height="24"/>
+        <Canvas x:Name="AdditionalFilePanel" HorizontalAlignment="Left" Height="117" Margin="42,323,0,0" VerticalAlignment="Top" Width="722">
+            <Button x:Name="loadSelectedFile" Content="Load selected file" Canvas.Left="588" Canvas.Top="52" Width="106" RenderTransformOrigin="1.486,2.506" Click="loadSelectedFile_Click"/>
+            <TextBox x:Name="selectedFileType" Height="23" Canvas.Left="484" TextWrapping="Wrap" Text="None" Canvas.Top="24" Width="210" IsReadOnly="True" FontWeight="Bold" FontSize="14"/>
+            <Label x:Name="label4" Content="File type selected for loading" Canvas.Left="484" Width="229"/>
+            <GroupBox x:Name="additionalFileGroupBox" Header="Additional file types" Canvas.Left="289" Canvas.Top="12" Height="97">
+                <StackPanel Height="75" Canvas.Left="300" Canvas.Top="24" Width="169" Name="additionalFiletypeGroup">
+                    <RadioButton x:Name="level2RadioButton" Content="Level 2 file" GroupName="FileType" Checked="fileRadioButton_Checked" />
+                    <RadioButton x:Name="optoutChangesRadioButton" Content="Opt out changes file" GroupName="FileType" Checked="fileRadioButton_Checked" />
+                    <RadioButton x:Name="optoutNewRadioButton" Content="Opt out reload file" GroupName="FileType" Checked="fileRadioButton_Checked" />
+                    <RadioButton x:Name="errorsRadioButton" Content="Errors file" GroupName="FileType" Checked="fileRadioButton_Checked" />
+
+                </StackPanel>
+            </GroupBox>
+            <DataGrid x:Name="additionalFileStatusTable" Canvas.Left="10" Canvas.Top="12" Width="265" Height="95" IsReadOnly="True"/>
+        </Canvas>
+
+
+
+
+
+
+    </Grid>
+</Window>
